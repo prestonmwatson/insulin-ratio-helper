@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var FoodSchema = mongoose.Schema({
+var Food = mongoose.model('Food', {
   name: String,
   restaurant: String,
   calories: Number,
@@ -8,4 +8,4 @@ var FoodSchema = mongoose.Schema({
   category: String
 });
 
-module.exports = mongoose.model('Food', FoodSchema);
+module.exports = mongoose.model('Food', Food);
