@@ -2,7 +2,7 @@
 
   var app = angular.module('InsulinRatioApp');
 
-  app.directive('card', function() {
+  app.directive('food', function() {
     var directive = {};
     directive.restrict = 'E';
     directive.replace = true;
