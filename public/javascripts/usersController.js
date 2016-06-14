@@ -89,33 +89,33 @@
       function($location, $routeProvider) {
         $routeProvider.
         when('/', {
-            templateUrl: 'partials/post.list.html',
-            controller: 'PostListCtrl',
+            templateUrl: '/templates/_homeView.html',
+            controller: '',
             access: { requiredLogin: false }
         }).
         when('/login', {
-            templateUrl: 'partials/post.view.html',
-            controller: 'PostViewCtrl',
+            templateUrl: '/templates/_logInView.html',
+            controller: 'UsersController',
             access: { requiredLogin: false }
         }).
         when('/signup', {
-            templateUrl: 'partials/post.list.html',
-            controller: 'PostListTagCtrl',
+            templateUrl: '/templates/_signUpView.html',
+            controller: 'UsersController',
             access: { requiredLogin: false }
         }).
         when('/profile', {
-            templateUrl: 'partials/admin.post.list.html',
-            controller: 'AdminPostListCtrl',
+            templateUrl: '/templates/_profileView.html',
+            controller: 'UsersController',
             access: { requiredLogin: true }
         }).
         when('/search', {
-            templateUrl: 'partials/admin.post.create.html',
-            controller: 'AdminPostCreateCtrl',
+            templateUrl: '/templates/_searchView.html',
+            controller: 'FoodsController',
             access: { requiredLogin: true }
         }).
         when('/food/:id', {
-            templateUrl: 'partials/admin.post.edit.html',
-            controller: 'AdminPostEditCtrl',
+            templateUrl: '/templates/_foodProfileView.html',
+            controller: 'FoodsController',
             access: { requiredLogin: true }
         }).
         otherwise({
@@ -130,6 +130,7 @@
         }
     });
   });
+
 
 
 
