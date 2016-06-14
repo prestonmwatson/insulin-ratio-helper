@@ -26,7 +26,7 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('login', passport.authenticate('local'), function(req, res, err) {
-  res.redirect('users/profile');
+  res.redirect('profile');
 });
 
 /* GET Signup page. */

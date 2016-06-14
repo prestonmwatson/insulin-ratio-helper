@@ -6,7 +6,7 @@ var User = require('../models/user');
 var passport = require('passport');
 var router = express.Router();
 
-router.get('/foods', function(req, res, next) {
+router.get('/', function(req, res, next) {
   Food.find({ }, function(err, foods) {
     if (err) console.log(err);
 
@@ -14,7 +14,7 @@ router.get('/foods', function(req, res, next) {
   });
 });
 
-router.post('/foods', function(req, res, next) {
+router.post('/', function(req, res, next) {
   var name = req.body.name;
   var restaurant = req.body.restaurant;
   var calories = req.body.calories;
