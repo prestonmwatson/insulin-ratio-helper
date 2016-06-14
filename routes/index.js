@@ -61,6 +61,10 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', {loggedIn :req.isAuthenticated(), page:'profile'});
 });
 
+// router.get('/search', function(req,res, next) {
+//   res.render('search');
+// });
+
 function checkUser(req, res, next) {
   if (req.user) {
     next();
