@@ -1,43 +1,58 @@
 var express = require('express');
+var passport = require('passport');
+var User = require('../models/user');
 var router = express.Router();
-var Food = require('../models/food')
+var Food = require('../models/food');
+var mongoose = require('mongoose');
+var router = express.Router();
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    res.redirect('/');
+  }
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', {loggedIn :req.isAuthenticated(), page:'home'});
 });
 
+/* GET Login page. */
+router.get('/login', function(req, res, next) {
+  res.render('login', {loggedIn :req.isAuthenticated(), page:'login'});
+});
 
-router.get('/foods', function(req, res, next) {
-  Food.find({ }, function(err, foods) {
-    if (err) console.log(err);
+router.post('login', passport.authenticate('local'), function(req, res, err) {
+  res.redirect('users/profile');
+});
 
-    res.json(foods);
+/* GET Signup page. */
+router.get('/signup', function(req, res, next){
+  res.render('signup', {loggedIn :req.isAuthenticated(), page:'signUp'});
+});
+
+/* POST Signup page. */
+router.post('/signup', function(req, res, next) {
+  var user = new User({ username: req.body.username });
+  User.register(user, req.body.password, function(error) {
+    if (error) {
+      res.send(error);
+    } else {
+      req.login(user, function(loginError) {
+        if (loginError) {
+          res.send(loginError)
+        } else {
+          res.redirect('/profile')
+        }
+      });
+    }
   });
 });
 
-router.post('/foods', function(req, res, next) {
-  var name = req.body.name;
-  var restaurant = req.body.restaurant;
-  var calories = req.body.calories;
-  var carbs = req.body.carbs;
-  var category = req.body.category;
-
-  var newFood = Food({
-      name: name,
-      restaurant: restaurant,
-      calories: calories,
-      carbs: carbs,
-      category: category
-  });
-
-  // Save the food
-  newFood.save(function(err, food) {
-      if (err) console.log(err);
-
-      res.json(food);
-  });
+router.get('/logout', function(req, res, next){
+  req.logout();
+  res.redirect('/');
 });
-
-module.exports = router;
 

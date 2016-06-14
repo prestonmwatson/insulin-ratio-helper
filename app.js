@@ -14,15 +14,15 @@ mongoose.connect(process.env.DB_INSULIN_RATIO);
 //Passport Config
 var passport = require('passport');
 var User = require('./models/user');
-// passport.use(User.createStrategy());
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-// var foods = require('./routes/foods');
-// var api = require('./routes/api')
+var foods = require('./routes/foods');
+var api = require('./routes/api')
 
 var app = express();
 
@@ -50,8 +50,8 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
-// app.use('/foods', foods);
-// app.use('/api', api);
+app.use('/foods', foods);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
