@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
+var User = require('../models/user');
+var Foods = require('../models/food');
+var mongoose = require('mongoose');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

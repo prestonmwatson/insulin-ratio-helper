@@ -5,6 +5,7 @@ var router = express.Router();
 var Food = require('../models/food');
 var mongoose = require('mongoose');
 var router = express.Router();
+var Logout = require('../models/user');
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
@@ -56,3 +57,16 @@ router.get('/logout', function(req, res, next){
   res.redirect('/');
 });
 
+router.get('/profile', function(req, res, next) {
+  res.render('profile', {loggedIn :req.isAuthenticated(), page:'profile'});
+});
+
+function checkUser(req, res, next) {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect('/');
+  }
+}
+
+module.exports = router;

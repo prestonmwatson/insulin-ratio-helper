@@ -16,7 +16,15 @@
       }).state('profile', {
         url: '/profile',
         templateUrl: '/templates/_profileView.html',
-    });
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: '/templates/_logInView.html'
+      })
+      .state('signup', {
+        url: '/signup',
+        templateUrl: '/templates/_signUpView.html'
+      });
   });
 
 })();
