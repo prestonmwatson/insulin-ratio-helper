@@ -2,6 +2,7 @@
 <html ng-app="InsulinRatioApp">
   <head>
     <title>Insulin</title>
+    <link rel="stylesheet" href="//cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
@@ -11,16 +12,18 @@
 
   </head>
   <body>
-    <nav class="tabs">
+    <nav class="nav-tabs">
       <a ui-sref-active="active" ui-sref="home">Home</a>
       <a ui-sref-active="active" ui-sref="search">Search</a>
       <a ui-sref-active="active" ui-sref="signup"></a>
     </nav>
 
-  <section ui-view>
 
 
-  </section>
+      <section ui-view></section>
+
+
+   </div>
 
   <footer>
     <p>Copyright Preston Watson 2016</p>

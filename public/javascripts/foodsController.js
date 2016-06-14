@@ -3,6 +3,7 @@
 
   app.controller('FoodsController', function($http) {
     this.newFood = { name: '' };
+    var foodList = [];
 
     var self = this;
 
@@ -12,7 +13,8 @@
     }).then(function successCallback(response) {
       console.log('success', response.data);
 
-      self.cards = response.data;
+      self.foodList = response.data;
+      console.log(self.foodList);
     }, function errorCallback(response) {
 
     });
