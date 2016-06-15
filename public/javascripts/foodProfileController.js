@@ -1,7 +1,7 @@
 (function() {
   var app = angular.module('InsulinRatioApp');
 
-  app.controller('FoodProfileController', function($http, ratio) {
+  app.controller('FoodProfileController', function($http, ratioFactory) {
     $http({
       method: 'GET',
       url: '/foods/:id'

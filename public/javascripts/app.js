@@ -25,10 +25,17 @@
       });
   });
 
-  app.service('ratio', function Ratio() {
-    var ratio = this;
+  app.factory('ratioFactory', function() {
+    return {
+      ratio: 0
+      }
 
-    ratio.insulin = 9 ;
   });
+
+  app.factory('foodRatioFactory', function() {
+    return {
+
+    }
+  })
 
 })();
