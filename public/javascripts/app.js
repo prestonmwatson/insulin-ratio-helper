@@ -16,18 +16,19 @@
       }).state('foods.view', {
         url: '/{foodId:[0]}',
         templateUrl: '/templates/_profileView.html',
-      }).state('profile', {
-        url: '/profile',
-        templateUrl: '/templates/_profileView.html',
-      })
-      .state('login', {
-        url: '/login',
-        templateUrl: '/templates/_logInView.html'
-      })
-      .state('signup', {
-        url: '/signup',
-        templateUrl: '/templates/_signUpView.html'
+      }).state('restaurants', {
+        url: '/restaurants',
+        templateUrl: '/templates/_restaurantView.html',
+      }).state('categories', {
+        url: '/categories',
+        templateUrl: '/templates/_categoryView.html',
       });
+  });
+
+  app.service('ratio', function Ratio() {
+    var ratio = this;
+
+    ratio.insulin = 9 ;
   });
 
 })();

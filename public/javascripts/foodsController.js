@@ -1,7 +1,7 @@
 (function() {
   var app = angular.module('InsulinRatioApp');
 
-  app.controller('FoodsController', function($http) {
+  app.controller('FoodsController', function($http, ratio) {
     this.newFood = { name: '' };
     var foodList = [];
 

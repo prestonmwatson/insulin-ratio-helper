@@ -20,43 +20,6 @@ router.get('/', function(req, res, next) {
   res.render('index', {loggedIn :req.isAuthenticated(), page:'home'});
 });
 
-/* GET Login page. */
-router.get('/login', function(req, res, next) {
-  res.render('login', {loggedIn :req.isAuthenticated(), page:'login'});
-});
-
-router.post('/login', passport.authenticate('local'), function(req, res, err) {
-  res.redirect('/profile');
-});
-
-/* GET Signup page. */
-router.get('/signup', function(req, res, next){
-  res.render('signup', {loggedIn :req.isAuthenticated(), page:'signUp'});
-});
-
-/* POST Signup page. */
-router.post('/signup', function(req, res, next) {
-  var user = new User({ username: req.body.username });
-  User.register(user, req.body.password, function(error) {
-    if (error) {
-      res.send(error);
-    } else {
-      req.login(user, function(loginError) {
-        if (loginError) {
-          res.send(loginError)
-        } else {
-          res.redirect('/profile')
-        }
-      });
-    }
-  });
-});
-
-router.get('/logout', function(req, res, next){
-  req.logout();
-  res.redirect('/');
-});
-
 router.get('/search', function(req, res, next) {
   Food.find({ }, function(err, foods) {
     if (err) console.log(err);
@@ -69,7 +32,7 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
   res.render('profile', {"userId":req.user.username, loggedIn :req.isAuthenticated(), page: 'profile'});
 });
 
-router.get('/', function(req, res, next) {
+router.get('/foods', function(req, res, next) {
   Food.find({ }, function(err, foods) {
     if (err) console.log(err);
 
@@ -77,7 +40,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('/', function(req, res, next) {
+router.post('/foods', function(req, res, next) {
   var name = req.body.name;
   var restaurant = req.body.restaurant;
   var calories = req.body.calories;
