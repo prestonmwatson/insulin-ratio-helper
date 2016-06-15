@@ -1,18 +1,23 @@
 (function() {
   var app = angular.module('InsulinRatioApp');
 
-  app.controller('FoodProfileController', function($http, ratio) {
+  app.controller('RestaurantController', function($http) {
+    var restaurantList = [];
+
+    var self = this;
+
     $http({
       method: 'GET',
-      url: '/foods/:id'
+      url: '/foods'
     }).then(function successCallback(response) {
       console.log('success', response.data);
 
-      self.foodList = response.data;
-      console.log(self.foodList);
+      self.restaurantList = response.data;
+      console.log(self.restaurantList);
     }, function errorCallback(response) {
 
     });
 
+    return this;
   });
 })();

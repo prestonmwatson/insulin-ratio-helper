@@ -1,0 +1,15 @@
+<h3>Popular Foods:</h3>
+
+<div class="container" ng-controller="FoodsController as foods">
+
+  <div class="row">
+
+    <div class="col-sm-6 col-md-6 col-lg-3" ng-repeat="food in foods.foodList">
+      <div name="{{food.name}}">{{food.name}}</div>
+
+    </div>
+
+  </div>
+
+</div>
+

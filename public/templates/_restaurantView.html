@@ -1,0 +1,22 @@
+<div class="container" ng-controller="FoodsController as foods">
+
+  <input type="search" ng-model="q" placeholder="filter restaurants..." aria-label="filter restaurants" />
+  <ul class="example-animate-container">
+    <li class="animate-repeat" ng-repeat="food in foods.foodList | filter:q as results">
+      {{food.restaurant}}
+    </li>
+    <li class="animate-repeat" ng-if="results.length == 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+
+  <div class="row">
+
+    <div class="col-sm-6 col-md-6 col-lg-3" ng-repeat="food in foods.foodList">
+      <div name="{{food.restaurant}}">{{food.restaurant}}</div>
+
+    </div>
+
+  </div>
+
+</div>
