@@ -10,9 +10,12 @@
       .state('home', {
         url: '/',
         templateUrl: '/templates/_homeView.html'
-      }).state('search', {
-        url: '/search',
+      }).state('foods', {
+        url: '/foods',
         templateUrl: '/templates/_searchView.html'
+      }).state('foods.view', {
+        url: '/{foodId:[0]}',
+        templateUrl: '/templates/_profileView.html',
       }).state('profile', {
         url: '/profile',
         templateUrl: '/templates/_profileView.html',
