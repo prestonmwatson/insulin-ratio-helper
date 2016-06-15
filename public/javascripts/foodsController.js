@@ -1,8 +1,7 @@
 (function() {
   var app = angular.module('InsulinRatioApp');
 
-  app.controller('FoodsController', function($http, ratio) {
-    this.newFood = { name: '' };
+  app.controller('FoodsController', function($http, ratioFactory) {
     var foodList = [];
 
     var self = this;
@@ -12,6 +11,10 @@
       url: '/foods'
     }).then(function successCallback(response) {
       console.log('success', response.data);
+      console.log(response.data[0].carbs);
+      console.log(ratioFactory.ratio);
+      var chickCarbs = response.data[0].carbs;
+      console.log(chickCarbs/ratioFactory.ratio);
 
       self.foodList = response.data;
       console.log(self.foodList);
