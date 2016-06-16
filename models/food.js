@@ -5,7 +5,8 @@ var Food = mongoose.model('Food', {
   restaurant: String,
   calories: Number,
   carbs: Number,
-  category: String
+  category: String,
+  ratio: Number
 });
 
 module.exports = mongoose.model('Food', Food);

@@ -33,7 +33,7 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
 });
 
 router.get('/foods', function(req, res, next) {
-  Food.find({ }, function(err, foods) {
+  Food.find(function(err, foods) {
     if (err) console.log(err);
 
     res.json(foods);
@@ -75,11 +75,17 @@ router.get('/foods/:id', function(req,res,next){
   var foodId = req.params.id;
   Food.find({ "_id": foodId }, function(error, data) {
     console.log(data);
-    res.json(data[0]);
+    // res.json(data[0]);
   })
 });
 
-
+router.get('/restaurants', function(req,res, next) {
+  Food.find({"restauruant": req.data}, function(error, data) {
+    console.log(data);
+    res.json(data);
+    // res.json(JSON.parse(data.body.name).result);
+  })
+})
 
 
 function checkUser(req, res, next) {
