@@ -12,12 +12,20 @@
     }).then(function successCallback(response) {
       console.log('success');
       console.log(ratioFactory.ratio);
-      var chickCarbs = response.data[0].carbs;
+      console.log(response.data)
+      var list = response.data
+
       var chickenRatio = chickCarbs/ratioFactory.ratio;
-      for (var i = 0; i < foodList.length; i++) {
-      var foodRatio = data[i].carbs/ratioFactory.ratio;
-      console.log(foodRatio);
-    }
+      var chickCarbs = response.data[0].carbs;
+
+
+      for (var i = 0; i < list.length; i++) {
+        var foodRatio = response.data[i].carbs;
+        var insulinFoodRatio = response.data[i].carbs/ratioFactory.ratio;
+        console.log(foodRatio);
+        console.log(insulinFoodRatio);
+      }
+
 
       self.foodList = response.data;
     }, function errorCallback(response) {
