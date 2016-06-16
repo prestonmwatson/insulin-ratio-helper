@@ -30,7 +30,12 @@
         <input type="submit" ng-click="update(insulin)" value="Save" />
       </form>
 
-      <h3 ng-show="vis">Your ratio is: {{ratioFactory.ratio}} </h3>
+      <div>
+      <h3 ng-show="vis">
+        Your ratio is: <span id="your-ratio">{{ratio}} </span>
+      </h3>
+
+      </div>
 
      </div>
 
