@@ -10,14 +10,24 @@
       method: 'GET',
       url: '/foods'
     }).then(function successCallback(response) {
-      console.log('success', response.data);
-      console.log(response.data[0].carbs);
+      console.log('success');
       console.log(ratioFactory.ratio);
+      console.log(response.data)
+      var list = response.data
+
+      var chickenRatio = chickCarbs/ratioFactory.ratio;
       var chickCarbs = response.data[0].carbs;
-      console.log(chickCarbs/ratioFactory.ratio);
+
+
+      for (var i = 0; i < list.length; i++) {
+        var foodRatio = response.data[i].carbs;
+        var insulinFoodRatio = response.data[i].carbs/ratioFactory.ratio;
+        console.log(foodRatio);
+        console.log(insulinFoodRatio);
+      }
+
 
       self.foodList = response.data;
-      console.log(self.foodList);
     }, function errorCallback(response) {
 
     });

@@ -14,8 +14,8 @@
         url: '/foods',
         templateUrl: '/templates/_searchView.html'
       }).state('foods.view', {
-        url: '/{foodId:[0]}',
-        templateUrl: '/templates/_profileView.html',
+        url: '/1',
+        templateUrl: '/templates/_foodProfileView.html',
       }).state('restaurants', {
         url: '/restaurants',
         templateUrl: '/templates/_restaurantView.html',
@@ -27,15 +27,13 @@
 
   app.factory('ratioFactory', function() {
     return {
-      ratio: 0
+      ratio: 0,
+      getRatio: function(){
+        return this.ratio;
+        }
       }
 
   });
 
-  app.factory('foodRatioFactory', function() {
-    return {
-
-    }
-  })
 
 })();
