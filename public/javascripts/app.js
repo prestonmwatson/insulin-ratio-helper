@@ -35,5 +35,15 @@
 
   });
 
+  app.factory('foodRatioFactory', function() {
+    return {
+      getFoodRatio: function(){
+        return this.foodRatio;
+        }
+      }
+
+  });
+
+
 
 })();
