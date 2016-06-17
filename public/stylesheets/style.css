@@ -376,6 +376,8 @@ img{
     color: #00C3A9;
     border: 2px solid #BADCDD;
     margin-left: 25px;
+    text-transform: uppercase;
+    font-family: 'montserratsemi_bold';
 }
 
 .food-carbs {
