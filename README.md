@@ -19,19 +19,19 @@ https://arcane-gorge-95155.herokuapp.com/#/
 
 #Approach
 * Must Haves
-** Ratio input that is saved on the site
-** Food Nutritional Information pulled from MongoDB
-** Functionality to easily calculate insulin needed
+    - Ratio input that is saved on the site
+    - Food Nutritional Information pulled from MongoDB
+    - Functionality to easily calculate insulin needed
 * Should Haves
-** The choice of many different foods and places
+    - The choice of many different foods and places
 * Could Haves
-** User Authentication - Really wanted to have authentication, but going about that from the Angular way was so different from Node.js, that I decided I needed to get the MVP up first before moving on to authentication
-** Saving Foods - tied into the authentication problem. I wanted users to be able to save a food that they may eat frequently. However, this is dependent on authentication.
+    - User Authentication -- Really wanted to have authentication, but going about that from the Angular way was so different from Node.js, that I decided I needed to get the MVP up first before moving on to authentication
+    - Saving Foods -- tied into the authentication problem. I wanted users to be able to save a food that they may eat frequently. However, this is dependent on authentication.
 
 
 ##User Stories
 * User 1 
-** User 1 visits T1 INSULIN:RATIO in hopes that he can easily search the meal he just ate at In-N-Out. He visits the site and enters his insulin to carbohydrate ratio on the home page and clicks save. He then goes to the food page to search if there are any foods from In-N-Out in the database. He finds that the burger, fries, and shake he ate are on the site and it easily tells him the insulin he needs to do for each food. User 1 does his insulin and takes our the mental math and guessing game that comes with eating out. 
+    - User 1 visits T1 INSULIN:RATIO in hopes that he can easily search the meal he just ate at In-N-Out. He visits the site and enters his insulin to carbohydrate ratio on the home page and clicks save. He then goes to the food page to search if there are any foods from In-N-Out in the database. He finds that the burger, fries, and shake he ate are on the site and it easily tells him the insulin he needs to do for each food. User 1 does his insulin and takes our the mental math and guessing game that comes with eating out. 
 
 
 
@@ -45,4 +45,4 @@ http://i.imgur.com/xHAupQp.jpg
 * Create Restaurant and Category pages
 * Limit number of foods on homepage 
 * Install Angular Auth so users can sign-in and store their ratio
-** Also allow users to favorite foods and store them in their profile
+    - Also allow users to favorite foods and store them in their profile
