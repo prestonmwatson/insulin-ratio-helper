@@ -7,9 +7,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'montserratbold';
     src: url('Montserrat/montserrat-bold-webfont.woff2') format('woff2'),
@@ -18,9 +15,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'montserratextra_bold';
@@ -31,9 +25,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'montserrathairline';
     src: url('Montserrat/montserrat-hairline-webfont.woff2') format('woff2'),
@@ -42,9 +33,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'montserratlight';
@@ -55,9 +43,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'montserratregular';
     src: url('Montserrat/montserrat-regular-webfont.woff2') format('woff2'),
@@ -66,9 +51,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'montserratsemi_bold';
@@ -79,9 +61,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'montserratultra_light';
     src: url('Montserrat/montserrat-ultralight-webfont.woff2') format('woff2'),
@@ -90,7 +69,6 @@
     font-style: normal;
 
 }
-
 
 body {
   text-rendering: optimizeLegibility;
