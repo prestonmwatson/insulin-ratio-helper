@@ -50,6 +50,7 @@
       var insulinFoodRatio = foodItem.carbs/ratioFactory.ratio;
       console.log(insulinFoodRatio);
       foodItem.ratio = insulinFoodRatio;
+      var round = Math.round(foodItem.ratio);
     }
 
     return this;

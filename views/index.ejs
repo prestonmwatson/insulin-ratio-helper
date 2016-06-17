@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="InsulinRatioApp">
   <head>
-    <title>Insulin</title>
+    <title>T1 | Insulin:Ratio</title>
     <link rel="stylesheet" href="//cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
@@ -14,39 +14,53 @@
 
   </head>
   <body>
-    <nav class="nav-tabs">
-      <a ui-sref-active="active" ui-sref="home">Home</a>
-      <a ui-sref-active="active" ui-sref="foods">Foods</a>
-      <a ui-sref-active="active" ui-sref="restaurants">Restaurants</a>
-      <a ui-sref-active="active" ui-sref="categories">Categories</a>
-    </nav>
+    <div>
+      <header class="navbar">
+        <h1 class="pull-left"><img src="http://i.imgur.com/CFaBp6y.png" alt="">INSULIN<span class="colon">:</span>RATIO</h1>
+          <nav class="nav-tabs">
+            <a ui-sref-active="active" ui-sref="home">HOME</a>
+            <a ui-sref-active="active" ui-sref="foods">FOODS</a>
+          </nav>
+      </header>
+    </div>
 
-
-
-    <div ng-controller="RatioController">
+    <div ng-controller="RatioController" class="carb-form">
       <form novalidate class="simple-form" ng-hide="submitted">
-        How many carbs per 1 unit of insulin?<input type="number" ng-model="insulin.ratio" /><br />
-        <input type="button" ng-click="reset()" value="Reset" />
-        <input type="submit" ng-click="update(insulin)" value="Save" />
+        <h4 class="please">Please enter your <span class="please-insulin">INSULIN<span class="colon">:</span>RATIO </span> below <br>for a personalized calculation.</h4>
+          <br>
+        <h3 class="pre-input">How many carbs per 1 unit of insulin do you take?</h3>
+          <br>
+        <input type="number" ng-model="insulin.ratio" class="input-field" /><br />
+        <input class="buttons" type="button" ng-click="reset()" value="RESET" />
+        <input class="buttons" type="submit" ng-click="update(insulin)" value="SAVE" />
       </form>
 
-      <div>
-      <h3 ng-show="vis">
-        Your ratio is: <span id="your-ratio">{{ratio}}</span>
-      </h3>
+
+    <div class='show'>
+        <div ng-show="vis" class="carb-form">
+          <h4 class="please">Your <span class="please-insulin">INSULIN<span class="colon">:</span>RATIO </span>has been saved!</h4>
+          <h3 class="ratio-save">Your ratio is: <span id="your-ratio">{{ratio}} carb(s) per 1 unit of insulin.</span></h3>
+          <br>
+          <div class="big-ratio-div">
+          <h2 class="big-ratio">{{ratio}}:1</h2>
+          </div>
+          <h3 class="ratio-save">Now, check out the foods!</h3>
+        </div>
 
       </div>
 
-     </div>
+    </div>
 
-    <div>
+    <div class='ui-section'>
 
-      <section ui-view></section>
+    <section ui-view></section>
 
     </div>
 
-  <footer>
+    <footer>
     <p>Copyright Preston Watson 2016</p>
-  </footer>
+    </footer>
+
   </body>
+
 </html>
