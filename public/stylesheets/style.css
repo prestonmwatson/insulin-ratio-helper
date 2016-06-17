@@ -104,6 +104,7 @@ h1:after, .food h6:after {
   font-size: 1rem;
   vertical-align: super;
   margin-left: 0.192rem;
+
 }
 
 .food {
@@ -122,6 +123,7 @@ h1:after, .food h6:after {
   font-size: 0.8rem;
   opacity: 0.6;
   color: #547B97;
+  font-family: 'montserratextra_bold';
 }
 .food h6:after {
   font-size: 60%;
