@@ -8,7 +8,6 @@
       $scope.submitted = false;
       $scope.ratio = ratioFactory.getRatio();
 
-
       $scope.update = function(insulin) {
         $scope.master = angular.copy(insulin);
         $scope.vis = !$scope.vis;
@@ -16,8 +15,6 @@
         ratioFactory.ratio = insulin.ratio;
         $scope.ratio = ratioFactory.getRatio();
         console.log(ratioFactory.getRatio());
-
-        // $scope.ratioFactory.ratio;
       };
 
       $scope.reset = function() {
@@ -26,10 +23,7 @@
 
       $scope.reset();
 
-
-
-      }]);
-
+    }]);
 
   })();
 

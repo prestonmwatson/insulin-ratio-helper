@@ -7,19 +7,13 @@ var mongoose = require('mongoose');
 var router = express.Router();
 var Logout = require('../models/user');
 
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    next();
-  } else {
-    res.redirect('/');
-  }
-}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {loggedIn :req.isAuthenticated(), page:'home'});
 });
 
+/* GET Search page. */
 router.get('/search', function(req, res, next) {
   Food.find({ }, function(err, foods) {
     if (err) console.log(err);
@@ -28,10 +22,7 @@ router.get('/search', function(req, res, next) {
   });
 });
 
-router.get('/profile', isLoggedIn, function(req, res, next) {
-  res.render('profile', {"userId":req.user.username, loggedIn :req.isAuthenticated(), page: 'profile'});
-});
-
+/* GET Foods page. */
 router.get('/foods', function(req, res, next) {
   Food.find(function(err, foods) {
     if (err) console.log(err);
@@ -40,6 +31,7 @@ router.get('/foods', function(req, res, next) {
   });
 });
 
+/* POST Foods. */
 router.post('/foods', function(req, res, next) {
   var name = req.body.name;
   var restaurant = req.body.restaurant;
@@ -63,14 +55,6 @@ router.post('/foods', function(req, res, next) {
   });
 });
 
-//Get individual foods from API
-// router.get('/foods/:id', function(req,res,next){
-//   var foodId = req.params.id;
-//   console.log('foodId =' + foodId);
-
-// //   res.render('food', {page: 'singleFood'});
-// })
-
 router.get('/foods/:id', function(req,res,next){
   var foodId = req.params.id;
   Food.find({ "_id": foodId }, function(error, data) {
@@ -83,13 +67,12 @@ router.get('/restaurants', function(req,res, next) {
   Food.find({"restauruant": req.data}, function(error, data) {
     console.log(data);
     res.json(data);
-    // res.json(JSON.parse(data.body.name).result);
   })
 })
 
-
-function checkUser(req, res, next) {
-  if (req.user) {
+//Authentication function for session
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
     next();
   } else {
     res.redirect('/');

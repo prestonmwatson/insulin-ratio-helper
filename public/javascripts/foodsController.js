@@ -3,7 +3,6 @@
 
   app.controller('FoodsController', ['$http', '$scope', 'ratioFactory', function($http, $scope, ratioFactory) {
     var foodList = [];
-
     var self = this;
 
     $http({
@@ -23,7 +22,6 @@
 
     });
 
-
     this.addFood = function() {
       var self = this;
 
@@ -35,8 +33,8 @@
         }
       }).then(function successCallback(response) {
 
-        self.cards.push({
-          question: self.newFood.name
+        self.foodList.push({
+          name: self.newFood.name
         });
 
       }, function errorCallback(response) {

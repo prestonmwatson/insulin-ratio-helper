@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 
+//Food Schema
+
 var Food = mongoose.model('Food', {
   name: String,
   restaurant: String,

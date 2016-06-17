@@ -35,35 +35,30 @@
         <input class="buttons" type="submit" ng-click="update(insulin)" value="SAVE" />
       </form>
 
-
-    <div class='show'>
+      <div class='show'>
         <div ng-show="vis" class="carb-form">
-          <h4 class="please">Your <span class="please-insulin">INSULIN<span class="colon">:</span>RATIO </span>has been saved!</h4>
-          <h3 class="ratio-save">Your ratio is: <span id="your-ratio">{{ratio}} carb(s) per 1 unit</span> of insulin.</h3>
-          <br>
+            <h4 class="please">Your <span class="please-insulin">INSULIN<span class="colon">:</span>RATIO </span>has been saved!</h4>
+              <h3 class="ratio-save">Your ratio is: <span id="your-ratio">{{ratio}} carb(s) per 1 unit</span> of insulin.</h3>
+              <br>
           <div class="big-ratio-div">
-          <h2 class="big-ratio">{{ratio}}:1</h2>
+            <h2 class="big-ratio">{{ratio}}:1</h2>
           </div>
-          <h3 class="ratio-save">Now, check out the foods!</h3>
-
+            <h3 class="ratio-save">Now, check out the foods!</h3>
           <a ui-sref="foods">
             <button class="foods-button-index">FOODS</button>
           </a>
-
         </div>
-
       </div>
-
     </div>
 
     <div class='ui-section'>
 
-    <section ui-view></section>
+      <section ui-view></section>
 
     </div>
 
     <footer>
-    <p>Copyright Preston Watson 2016</p>
+      <p>Copyright Preston Watson 2016</p>
     </footer>
 
   </body>

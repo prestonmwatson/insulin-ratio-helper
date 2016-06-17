@@ -8,7 +8,6 @@
     }).then(function successCallback(response) {
       console.log('success', response.data);
     });
-
       self.foodInfo = response.data;
       console.log(self.foodInfo);
     }, function errorCallback(response) {

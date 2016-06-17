@@ -25,13 +25,15 @@
       });
   });
 
+
+// ratioFactory Service Component
   app.factory('ratioFactory', function() {
     return {
       ratio: 0,
       getRatio: function(){
         return this.ratio;
-        }
       }
+    }
 
   });
 
