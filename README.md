@@ -37,8 +37,8 @@ https://arcane-gorge-95155.herokuapp.com/#/
 
 ##Wireframes
 
-http://i.imgur.com/Q1ecCzK.jpg
-http://i.imgur.com/xHAupQp.jpg
+    - http://i.imgur.com/Q1ecCzK.jpg
+    - http://i.imgur.com/xHAupQp.jpg
 
 ##Next Steps
 * Create Individual Food Pages that a user can visit
