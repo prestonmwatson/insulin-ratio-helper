@@ -1,3 +1,97 @@
+@font-face {
+    font-family: 'montserratblack';
+    src: url('Montserrat/montserrat-black-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserratbold';
+    src: url('Montserrat/montserrat-bold-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserratextra_bold';
+    src: url('Montserrat/montserrat-extrabold-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-extrabold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserrathairline';
+    src: url('Montserrat/montserrat-hairline-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-hairline-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserratlight';
+    src: url('Montserrat/montserrat-light-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('Montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserratsemi_bold';
+    src: url('Montserrat/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'montserratultra_light';
+    src: url('Montserrat/montserrat-ultralight-webfont.woff2') format('woff2'),
+         url('Montserrat/montserrat-ultralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -9,44 +103,48 @@ body {
 }
 
 header {
-  border-bottom: 1px solid black;
   padding-bottom: 1rem;
-  margin-bottom: 1.618rem;
+  margin-bottom: 0px;
+
 }
 
 header.navbar {
   border-radius: 0;
+  background-color: white;
+  height: 150px;
+  text-align: center;
 }
 
 h1 {
   font-weight: bold;
-  letter-spacing: -2px;
-  max-width: 100px;
+  letter-spacing: 0px;
+  font-family: 'montserratextra_bold';
+  color: #212B40;
+  margin-top: 15px;
 }
 h1:after, .food h6:after {
-  content: "™";
   font-size: 1rem;
   vertical-align: super;
   margin-left: 0.192rem;
 }
 
 .food {
-  background: #231e1e;
+  background: #1695A3;
   border-color: black;
   color: white;
-  padding: 1rem;
+  padding: .7rem;
   min-height: 16rem;
   position: relative;
   max-width: 300px;
+  border-bottom: 2px solid white;
+  margin-top: 20px;
+  height: 325px;
 }
 
 .food h6 {
-  position: absolute;
   font-size: 0.8rem;
-  margin-top: 1.618rem;
-  opacity: 0.2;
-  bottom: 0.618rem;
-  left: 1rem;
+  opacity: 0.6;
+/*  left: 1rem;*/
 }
 .food h6:after {
   font-size: 60%;
@@ -56,8 +154,9 @@ h1:after, .food h6:after {
   cursor: pointer;
 }
 
-.row {
-  margin: 0;
+.home-row {
+  margin: auto;
+  width: 940px;
 }
 
 footer {
@@ -65,9 +164,6 @@ footer {
   margin-top: 2rem;
   color: silver;
   font-size: 0.6rem;
-}
-footer .heart {
-  color:#cf2e31;
 }
 
 nav.tabs {
@@ -80,6 +176,7 @@ nav.tabs a {
   padding: 4px 20px;
   margin-bottom: 24px;
   margin-right: 1px;
+
 }
 nav.tabs a.active {
   background-color: black;
@@ -92,3 +189,212 @@ input {
   width: 50%;
   padding: 6px 9px;
 }
+.nav-tabs {
+  background-color: white;
+  height: 30px;
+  border-bottom: none;
+}
+
+.nav-tabs a{
+  margin-left: 20px;
+  font-family: 'montserratsemi_bold';
+  color: #00C3A9;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+.nav-tabs a:hover{
+  margin-left: 20px;
+  font-family: 'montserratsemi_bold';
+  color: white;
+  background-color: #00C3A9;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+
+.nav-tabs a:hover{
+  border: 1px solid #00C3A9;
+  text-decoration: none;
+  padding: 5px;
+}
+
+h4.ng-binding {
+  color: #EB7F00;
+
+
+}
+
+.home-food-name {
+  font-family: 'montserratsemi_bold';
+  margin-top: 15px;
+  color: #547B97;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+form {
+  padding: 0.5rem 3.5rem;
+}
+
+form .buttons {
+  width: 10%;
+  background-color: #547B97;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 1px solid white;
+  color: white;
+  font-family: 'montserratsemi_bold';
+}
+
+form .buttons:hover {
+  width: 10%;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 1px solid white;
+  color: #547B97;
+  font-family: 'montserratsemi_bold';
+}
+
+.list {
+  list-style-type: none;
+}
+
+.search{
+  margin: auto;
+}
+
+#personal {
+  font-weight: bold;
+}
+
+.input-field{
+    width: 150px;
+    padding: 6px 9px;
+    border-radius: 100px;
+    height: 150px;
+    border: 4px solid #BADCDD;
+    background-color: #547B97;
+    margin-bottom: 15px;
+}
+
+.input-field[type=number] {
+  font-size: 50px;
+  text-align: center;
+  color: #BADCDD;
+  font-family: 'montserratsemi_bold';
+  padding-left: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  padding-right: -5px;
+  opacity: 1;
+}
+
+.colon {
+  color: #00C3A9;
+}
+
+.carb-form {
+  background-color: #547B97;
+  text-align: center;
+  height: 375px;
+  border-top: 1px solid #212B40;
+  border-bottom: 2px solid #212B40;
+}
+
+.please {
+  color: #BADCDD;
+  font-size: 18px;
+  margin-top: 15px;
+  font-family: 'montserratsemi_bold';
+}
+
+.please-insulin {
+  color:#212B40;
+}
+
+.pre-input{
+  color: white;
+  font-family: 'montserratsemi_bold';
+  font-size: 20px;
+}
+
+img{
+  height: 75px;
+  }
+
+.home {
+/**/
+}
+
+.home h3 {
+  color: #212B40;
+  font-family: 'montserratsemi_bold';
+}
+
+.ui-section{
+  width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.home-foods {
+  border: 4px solid #547B97;
+  margin: 10px 20px 10px 20px;
+  padding: 10px;
+}
+
+.more-foods{
+  font-family: 'montserratsemi_bold';
+  color: #00C3A9;
+  border: 1px solid #00C3A9;
+  background-color: white;
+  margin-top: 15px;
+}
+
+.more-foods:hover{
+  font-family: 'montserratsemi_bold';
+  color: white;
+  border: 1px solid white;
+  background-color: #00C3A9;
+}
+
+.ratio-save {
+  color: white;
+  font-family: 'montserratsemi_bold';
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.big-ratio {
+  border: 4px solid #BADCDD;
+  padding-top: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 50px;
+  font-family: 'montserratsemi_bold';
+  color: #BADCDD;
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  margin-bottom: 0px;
+}
+
+.big-ratio-div {
+  width: 160px;
+  margin: auto;
+}
+
+/*input[type="search"]::webkit-input-placeholder {*/
+[type="search"] {
+    -webkit-appearance: textfield;
+    color: #00C3A9;
+    border: 2px solid #BADCDD;
+}
+
+
