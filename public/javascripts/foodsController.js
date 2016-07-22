@@ -46,9 +46,10 @@
 
     this.iterate = function(foodItem) {
       var insulinFoodRatio = foodItem.carbs/ratioFactory.ratio;
-      console.log(insulinFoodRatio);
-      foodItem.ratio = insulinFoodRatio;
-      var round = Math.round(foodItem.ratio);
+      // console.log(insulinFoodRatio);
+      // console.log(insulinFoodRatio.toFixed(1));
+      foodItem.ratio = insulinFoodRatio.toFixed(1);
+      // var round = Math.round(foodItem.ratio);
     }
 
     return this;
